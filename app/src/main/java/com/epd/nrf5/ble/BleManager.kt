@@ -395,12 +395,17 @@ class BleManager(private val context: Context) {
         write(EpdcProtocol.INIT, hex2bytes(driverValue))
     }
 
-    fun clearScreen() {
-        write(EpdcProtocol.CLEAR)
+    suspend fun clearScreen(): Boolean {
+        // INIT 重新初始化控制器（REFRESH 后必须），再 CLEAR 清屏，最后 REFRESH 刷新
+        if (!writeSuspend(EpdcProtocol.INIT, byteArrayOf(0x14), true)) return false
+        kotlinx.coroutines.delay(10)
+        if (!writeSuspend(EpdcProtocol.CLEAR)) return false
+        kotlinx.coroutines.delay(10)
+        return writeSuspend(EpdcProtocol.REFRESH)
     }
 
-    fun refresh() {
-        write(EpdcProtocol.REFRESH)
+    suspend fun refresh(): Boolean {
+        return writeSuspend(EpdcProtocol.REFRESH)
     }
 
     private fun hex2bytes(hex: String): ByteArray {

@@ -164,9 +164,12 @@ class MainActivity : AppCompatActivity() {
                 .setTitle("确认")
                 .setMessage("清除屏幕内容?")
                 .setPositiveButton("确定") { _, _ ->
-                    addLog("清屏中…")
-                    bleManager.clearScreen()
-                    addLog("清屏指令已发送")
+                    lifecycleScope.launch {
+                        addLog("清屏中 (INIT → CLEAR → REFRESH)…")
+                        val ok = bleManager.clearScreen()
+                        if (ok) addLog("清屏完成")
+                        else addLog("清屏失败")
+                    }
                 }
                 .setNegativeButton("取消", null)
                 .show()
