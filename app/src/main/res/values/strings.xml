@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BLE墨水屏</string>
+    <string name="btn_connect">连接</string>
+    <string name="btn_disconnect">断开</string>
+    <string name="btn_reconnect">重连</string>
+    <string name="btn_scan">扫描设备</string>
+    <string name="btn_send_image">发送图片</string>
+    <string name="btn_clear_screen">清除屏幕</string>
+    <string name="btn_set_driver">确定</string>
+    <string name="label_driver">驱动:</string>
+    <string name="label_canvas_size">画布尺寸:</string>
+    <string name="label_color_mode">颜色模式:</string>
+    <string name="label_dither_alg">抖动算法:</string>
+    <string name="hint_device_id">输入4位16进制</string>
+    <string name="btn_import_image">选择图片</string>
+    <string name="btn_brush">画笔</string>
+    <string name="btn_eraser">橡皮擦</string>
+    <string name="btn_text">文字</string>
+    <string name="status_disconnected">未连接</string>
+    <string name="status_connecting">正在连接…</string>
+    <string name="status_connected">已连接: %s</string>
+    <string name="status_scanning">正在扫描…</string>
+    <string name="title_log">日志</string>
+    <string name="title_device_control">设备控制</string>
+    <string name="title_image_transfer">图片传输</string>
+    <string name="title_canvas">画布</string>
+</resources>
