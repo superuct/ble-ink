@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
         // 默认画布 768x552，预览自适应宽度
         binding.imagePreview.post { adjustPreviewSize() }
-        addLog("APP v2.1.0 — ${canvasWidth}x$canvasHeight 四色 EPD")
+        addLog("APP v2.1.1 — ${canvasWidth}x$canvasHeight 四色 EPD")
     }
 
     override fun onDestroy() {
@@ -284,9 +284,9 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onFirmwareVersion(version: Int) {
-            binding.tvVersionInfo.text = "固件: 0x${version.toString(16)} | APP: v2.1.0"
+            binding.tvVersionInfo.text = "固件: 0x${version.toString(16)} | APP: v2.1.1"
             addLog("固件版本: 0x${version.toString(16)}")
-            addLog("APP版本: v2.1.0")
+            addLog("APP版本: v2.1.1")
         }
 
         override fun onError(message: String) {

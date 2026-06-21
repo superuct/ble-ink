@@ -131,7 +131,7 @@ class BleManager(private val context: Context) {
                 firmwareVersion = version
                 handler.post {
                     callback?.onFirmwareVersion(version)
-                    callback?.onLog("固件版本: 0x${version.toString(16)}, APP版本: v2.1.0")
+                    callback?.onLog("固件版本: 0x${version.toString(16)}, APP版本: v2.1.1")
                 }
             }
         }
